@@ -1,8 +1,11 @@
-module CustomExporter
+module custom-exporter
 
 go 1.20
 
-require github.com/prometheus/client_golang v1.17.0
+require (
+	github.com/go-sql-driver/mysql v1.7.1
+	github.com/prometheus/client_golang v1.17.0
+)
 
 require (
 	github.com/beorn7/perks v1.0.1 // indirect

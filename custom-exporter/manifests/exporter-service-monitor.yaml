@@ -1,0 +1,13 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: my-mysql-exporter-monitor
+  labels:
+    release: prometheus # このラベルはPrometheusインスタンスを識別するために使用されます。
+spec:
+  selector:
+    matchLabels:
+      app: my-mysql-exporter # これは監視対象のServiceのラベルに一致させる必要があります。
+  endpoints:
+    - port: monitoring
+      interval: 30s # スクレイプ間隔を指定
