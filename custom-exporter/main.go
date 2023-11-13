@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"log"
 	"net/http"
+	"time"
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/prometheus/client_golang/prometheus"
@@ -54,7 +55,7 @@ func main() {
     go func() {
         for {
             collectSchemaSizes()
-            // Sleep or wait for a specific interval
+            time.Sleep(5 * time.Minute) // 5分間隔で待機
         }
     }()
 
